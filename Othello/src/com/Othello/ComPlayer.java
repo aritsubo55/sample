@@ -4,7 +4,7 @@ import utility.Vectors;
 
 public class ComPlayer extends Player{
 	Boad priority;//優先順位を作り保存する
-	
+
 	//コンストラクタ
 	public ComPlayer(Boad boad){
 		this("プレイヤー" + (counter+1),boad);
@@ -15,7 +15,7 @@ public class ComPlayer extends Player{
 		setPriority();
 	}
 	//メソッド
-	
+
 	//手番の標準行動
 	public void play(){
 		int ty = 0;
@@ -25,6 +25,7 @@ public class ComPlayer extends Player{
 			System.out.println("パスしました。");
 			addPassCount();
 		}else{
+			resetPass();
 			System.out.println(take + "に置きました。");
 			ty = (take - 1) / boad.getSize();//take i
 			tx = (take - 1) % boad.getSize();//take j
